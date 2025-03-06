@@ -10,9 +10,17 @@ const Register = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const user = { email, password };
 
     try {
+      const usersResponse = await fetch("http://localhost:3000/users");
+      const users = await usersResponse.json();
+      const nextId =
+        users.length > 0
+          ? Math.max(...users.map((user: any) => user.id)) + 1
+          : 1;
+
+      const user = { id: nextId, email, password };
+
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
