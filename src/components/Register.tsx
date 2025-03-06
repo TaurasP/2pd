@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export default function Component() {
+export default function Register() {
   return (
     <Card className="mx-auto max-w-sm min-w-md">
       <CardHeader className="space-y-1">

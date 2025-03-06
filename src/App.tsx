@@ -1,5 +1,6 @@
 import Login from "./components/Login";
 // import Register from "./components/Register";
+// import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -8,6 +9,12 @@ function App() {
       <Login />
     </div>
   );
+
+  // return (
+  //   <div className="container mx-auto px-10">
+  //     <Dashboard />
+  //   </div>
+  // );
 }
 
 export default App;
