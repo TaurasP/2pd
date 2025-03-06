@@ -1,20 +1,30 @@
-// import Login from "./components/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/context/AuthContext";
+import Login from "./components/Login";
 import Register from "./components/Register";
-// import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-      <Register />
-      {/* <Login /> */}
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
-
-  // return (
-  //   <div className="container mx-auto px-10">
-  //     <Dashboard />
-  //   </div>
-  // );
 }
 
 export default App;

@@ -17,11 +17,11 @@ export default function Navigation() {
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Receptai
-            </NavigationMenuLink>
-          </Link>
+          {/* <Link href="/dashboard" legacyBehavior passHref> */}
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Receptai
+          </NavigationMenuLink>
+          {/* </Link> */}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
