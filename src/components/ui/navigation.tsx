@@ -21,6 +21,9 @@ export default function Navigation() {
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
             Receptai
           </NavigationMenuLink>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Mėgstamiausi receptai
+          </NavigationMenuLink>
           {/* </Link> */}
         </NavigationMenuItem>
       </NavigationMenuList>

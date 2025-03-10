@@ -4,9 +4,11 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+// import { ThemeProvider } from "./components/ThemeProvider";
 
 function App() {
   return (
+    // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <AuthProvider>
       <Router>
         <Routes>
@@ -24,6 +26,7 @@ function App() {
         </Routes>
       </Router>
     </AuthProvider>
+    // </ThemeProvider>
   );
 }
 
