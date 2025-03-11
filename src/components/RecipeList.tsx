@@ -23,7 +23,7 @@ import RecipeCard from "./RecipeCard";
 const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const recipesPerPage = 5;
+  const recipesPerPage = 8;
   const navigate = useNavigate();
   const authContext = useContext(AuthContext);
 
@@ -68,21 +68,19 @@ const RecipeList: React.FC = () => {
 
   return (
     <>
-      <div className="bg-gray-100 h-dvh">
+      <div className="bg-gray-100 min-h-screen">
         <div className="container mx-auto px-4">
           <header className="sticky top-0 z-50 -mb-4 px-4 pb-4">
             <div className="fade-bottom absolute left-0 h-24 w-full backdrop-blur-lg"></div>
             <div className="relative mx-auto max-w-container">
               <NavbarComponent>
                 <NavbarLeft>
-                  {/* <a href="/" className="flex items-center gap-2 text-xl font-bold"> */}
                   <a className="flex items-center gap-2 text-xl font-bold">
                     <img src={chefIcon} alt="Chef Icon" className="h-6 w-6" />{" "}
                   </a>
                   <Navigation />
                 </NavbarLeft>
                 <NavbarRight>
-                  {/* <ModeToggle /> */}
                   <Button
                     variant="default"
                     onClick={handleLogout}
@@ -94,7 +92,7 @@ const RecipeList: React.FC = () => {
               </NavbarComponent>
               <div className="flex flex-col justify-between bg-gray-100">
                 <div className="flex-grow">
-                  <div className="grid grid-flow-col gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {currentRecipes.map((recipe, index) => (
                       <RecipeCard key={index} recipe={recipe} />
                     ))}

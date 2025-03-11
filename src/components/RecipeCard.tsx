@@ -59,7 +59,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     <div className="">
       <Card
         id={`card-block-${recipe.id}`}
-        className="bg-white shadow-md rounded-lg overflow-hidden py-0 h-125 group"
+        className="bg-white shadow-md rounded-lg overflow-hidden py-0 h-135 group"
         onMouseEnter={handleCardMouseEnter}
         onMouseLeave={handleCardMouseLeave}
       >
