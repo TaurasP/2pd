@@ -7,7 +7,11 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const authContext = useContext(AuthContext);
 
-  if (!authContext?.isAuthenticated) {
+  if (authContext === undefined) {
+    throw new Error("AuthContext must be used within an AuthProvider");
+  }
+
+  if (!authContext.isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
