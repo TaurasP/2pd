@@ -2,13 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/context/AuthContext";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-// import { ThemeProvider } from "./components/ThemeProvider";
+import RecipeDetail from "./components/RecipeDetail";
+import RecipeList from "./components/RecipeList";
 
 function App() {
   return (
-    // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <AuthProvider>
       <Router>
         <Routes>
@@ -16,17 +15,24 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/dashboard"
+            path="/recipe"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <RecipeList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/recipe/:id"
+            element={
+              <ProtectedRoute>
+                <RecipeDetail />
               </ProtectedRoute>
             }
           />
         </Routes>
       </Router>
     </AuthProvider>
-    // </ThemeProvider>
   );
 }
 

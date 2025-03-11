@@ -11,21 +11,34 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "./navigation-menu";
+import { AuthContext } from "@/context/AuthContext";
+import { useContext } from "react";
 
 export default function Navigation() {
+  const authContext = useContext(AuthContext);
+  // console.log(authContext?.isAuthenticated);
+
   return (
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
-          {/* <Link href="/dashboard" legacyBehavior passHref> */}
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Receptai
-          </NavigationMenuLink>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Mėgstamiausi receptai
-          </NavigationMenuLink>
-          {/* </Link> */}
+          <Link
+            href={authContext?.isAuthenticated ? "/recipe" : "/login"}
+            legacyBehavior
+            passHref
+          >
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Recipes
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
+        {/* <NavigationMenuItem>
+          <Link href="/recipe" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Favorite recipes
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

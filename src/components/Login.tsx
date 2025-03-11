@@ -24,7 +24,7 @@ export default function Login() {
 
       if (user) {
         authContext?.login(user);
-        navigate("/dashboard");
+        navigate("/recipe");
       } else {
         alert("Invalid email or password");
       }
@@ -38,23 +38,23 @@ export default function Login() {
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       <Card className="mx-auto max-w-sm min-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Prisijungimas</CardTitle>
+          <CardTitle className="text-2xl font-bold">Login</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">El. paštas</Label>
+              <Label htmlFor="email">E-mail</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="el@pastas.lt"
+                placeholder="example@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Slaptažodis</Label>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -65,14 +65,14 @@ export default function Login() {
               />
             </div>
             <Button type="submit" className="w-full cursor-pointer">
-              Prisijungti
+              Login
             </Button>
             <Button
               variant="outline"
               className="w-full cursor-pointer"
               onClick={() => navigate("/register")}
             >
-              Registruotis
+              Register
             </Button>
           </form>
         </CardContent>

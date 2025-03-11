@@ -32,16 +32,16 @@ const Register = () => {
       });
 
       if (response.ok) {
-        alert("Naudotojas užregistruotas!");
+        alert("User registered successfully!");
         setEmail("");
         setPassword("");
         navigate("/login");
       } else {
-        alert("Nepavyko užregistruoti naudotojo.");
+        alert("User was not registered.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Klaida registruojant naudotoją.");
+      alert("An error occurred while registering a user.");
     }
   };
 
@@ -49,23 +49,23 @@ const Register = () => {
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       <Card className="mx-auto max-w-sm min-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Registracija</CardTitle>
+          <CardTitle className="text-2xl font-bold">Register</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">El. paštas</Label>
+              <Label htmlFor="email">E-mail</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="el@pastas.lt"
+                placeholder="example@email.com"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Slaptažodis</Label>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -76,7 +76,7 @@ const Register = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="confirm-password">Pakartoti slaptažodį</Label>
+              <Label htmlFor="confirm-password">Repeat password</Label>
               <Input
                 id="confirm-password"
                 type="password"
@@ -85,7 +85,7 @@ const Register = () => {
               />
             </div>
             <Button type="submit" className="w-full cursor-pointer">
-              Registruotis
+              Register
             </Button>
           </form>
         </CardContent>

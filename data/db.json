@@ -9,21 +9,6 @@
       "id": "2",
       "email": "b@b.lt",
       "password": "2"
-    },
-    {
-      "id": 3,
-      "email": "c@c.lt",
-      "password": "3"
-    },
-    {
-      "id": 4,
-      "email": "d@d.lt",
-      "password": "4"
-    },
-    {
-      "id": 5,
-      "email": "e@e.lt",
-      "password": "5"
     }
   ]
 }
