@@ -55,6 +55,37 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     setIsHovered(false);
   };
 
+  const handleFavoriteRecipe = async () => {
+    try {
+      const favoriteRecipesResponse = await fetch(
+        "http://localhost:3000/favorite-recipes"
+      );
+      const favoriteRecipes = await favoriteRecipesResponse.json();
+
+      if (favoriteRecipes.some((favRecipe: any) => favRecipe.id != recipe.id)) {
+        const response = await fetch("http://localhost:3000/favorite-recipes", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(recipe),
+        });
+
+        if (response.ok) {
+          alert("Recipe was saved to favorites successfully!");
+          // navigate("/login");
+        } else {
+          alert("Recipe was not saved to favorites.");
+        }
+      } else {
+        alert("Recipe is already in favorites.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while saving recipe to favorites.");
+    }
+  };
+
   return (
     <Card
       id={`card-block-${recipe.id}`}
@@ -70,6 +101,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
             className="absolute top-2 right-2 cursor-pointer bg-[#ffffffb3] p-3 rounded-full"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleFavoriteRecipe}
           >
             <svg
               className="text-black-400 w-6 h-auto fill-current"

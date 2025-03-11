@@ -16,7 +16,6 @@ import { useContext } from "react";
 
 export default function Navigation() {
   const authContext = useContext(AuthContext);
-  // console.log(authContext?.isAuthenticated);
 
   return (
     <NavigationMenu className="hidden md:flex">
@@ -32,13 +31,17 @@ export default function Navigation() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <Link href="/recipe" legacyBehavior passHref>
+        <NavigationMenuItem>
+          <Link
+            href={authContext?.isAuthenticated ? "/favorites" : "/login"}
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Favorite recipes
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

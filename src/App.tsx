@@ -5,6 +5,7 @@ import Register from "./components/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import RecipeDetail from "./components/RecipeDetail";
 import RecipeList from "./components/RecipeList";
+import FavoriteRecipeList from "./components/FavoriteRecipesList";
 
 function App() {
   return (
@@ -27,6 +28,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <RecipeDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <ProtectedRoute>
+                <FavoriteRecipeList />
               </ProtectedRoute>
             }
           />
