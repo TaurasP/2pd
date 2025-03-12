@@ -93,17 +93,17 @@ const RecipeDetail = () => {
                             {recipe.name}
                           </h1>
                           <Table className="w-full">
-                            <TableBody>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                            <TableBody className="bg-white">
+                              <TableRow className="border-none">
+                                <TableCell className=" py-2 font-medium">
                                   Instructions
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.instructions}
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Ingredients
                                 </TableCell>
                                 <TableCell className="py-2">
@@ -116,56 +116,56 @@ const RecipeDetail = () => {
                                   </ul>
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Preparation time
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.prepTimeMinutes} min.
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Cook time
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.cookTimeMinutes} min.
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Servings
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.servings}
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Calories per serving
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.caloriesPerServing} kcal
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Difficulty
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.difficulty}
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Cuisine
                                 </TableCell>
                                 <TableCell className="py-2">
                                   {recipe.cuisine}
                                 </TableCell>
                               </TableRow>
-                              <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
-                                <TableCell className="bg-muted/50 py-2 font-medium">
+                              <TableRow className="border-none">
+                                <TableCell className="py-2 font-medium">
                                   Meal type
                                 </TableCell>
                                 <TableCell className="py-2">

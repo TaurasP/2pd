@@ -36,12 +36,22 @@ const RecipeList: React.FC = () => {
     const fetchRecipes = async () => {
       try {
         const response = await axios.get("https://dummyjson.com/recipes");
-        setRecipes(
-          response.data.recipes.sort(
-            (a: { name: string }, b: { name: string }) =>
-              a.name.localeCompare(b.name)
-          )
+        const favoriteRecipesResponse = await axios.get(
+          "http://localhost:3000/favorite-recipes"
         );
+
+        const favoriteRecipes = favoriteRecipesResponse.data;
+        const recipesData = response.data.recipes.sort(
+          (a: { name: string }, b: { name: string }) =>
+            a.name.localeCompare(b.name)
+        );
+
+        recipesData.forEach((recipe: any) => {
+          recipe.isFavorite = favoriteRecipes.some(
+            (favRecipe: any) => Number(favRecipe.id) === recipe.id
+          );
+        });
+        setRecipes(recipesData);
       } catch (error) {
         console.error("Error fetching recipes:", error);
       }
