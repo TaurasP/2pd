@@ -39,15 +39,20 @@ const FavoriteRecipeList: React.FC = () => {
           "http://localhost:3000/favorite-recipes"
         );
         setRecipes(
-          response.data.sort((a: { name: string }, b: { name: string }) =>
-            a.name.localeCompare(b.name)
-          )
+          response.data
+            .filter(
+              (recipe: { userId: number }) =>
+                recipe.userId ===
+                JSON.parse(localStorage.getItem("user") || "null")
+            )
+            .sort((a: { name: string }, b: { name: string }) =>
+              a.name.localeCompare(b.name)
+            )
         );
       } catch (error) {
         console.error("Error fetching recipes:", error);
       }
     };
-
     fetchRecipes();
   }, []);
 
@@ -91,7 +96,13 @@ const FavoriteRecipeList: React.FC = () => {
                   </Button>
                 </NavbarRight>
               </NavbarComponent>
-              <div className="flex flex-col justify-between bg-gray-100">
+              <div style={{ display: recipes.length === 0 ? "block" : "none" }}>
+                No favorite recipes found.
+              </div>
+              <div
+                className="flex flex-col justify-between bg-gray-100"
+                style={{ display: recipes.length === 0 ? "none" : "block" }}
+              >
                 <div className="flex-grow">
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {currentRecipes.map((recipe, index) => (

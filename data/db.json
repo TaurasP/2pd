@@ -13,7 +13,7 @@
   ],
   "favorite-recipes": [
     {
-      "id": "13",
+      "id": 13,
       "name": "Aloo Keema",
       "ingredients": [
         "Ground beef",
@@ -50,7 +50,7 @@
         "Pakistani",
         "Asian"
       ],
-      "userId": 152,
+      "userId": "1",
       "image": "https://cdn.dummyjson.com/recipe-images/13.webp",
       "rating": 4.6,
       "reviewCount": 53,
@@ -93,7 +93,7 @@
         "Stir-fry",
         "Asian"
       ],
-      "userId": 18,
+      "userId": "2",
       "image": "https://cdn.dummyjson.com/recipe-images/8.webp",
       "rating": 4.7,
       "reviewCount": 58,

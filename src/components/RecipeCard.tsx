@@ -18,6 +18,7 @@ interface RecipeCardProps {
     image: string;
     rating: number;
     isFavorite: boolean;
+    userId: number;
   };
 }
 
@@ -74,8 +75,14 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
       // );
 
       if (!recipe.isFavorite) {
-        console.log("Recipe is not in favorites");
         recipe.isFavorite = true;
+        const userId = localStorage.getItem("user");
+        if (userId) {
+          recipe.userId = JSON.parse(userId);
+        } else {
+          console.log("No user ID found in localStorage.");
+        }
+        // await axios.post("http://localhost:3000/favorite-recipes", recipe);
         const response = await fetch("http://localhost:3000/favorite-recipes", {
           method: "POST",
           headers: {
@@ -89,13 +96,10 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
           alert("Recipe was not saved to favorites.");
         }
       } else {
-        console.log("Recipe is in favorites");
         recipe.isFavorite = false;
-
         // await axios.delete("http://127.0.0.1:3000/favorite-recipes/", {
         //   params: { id: recipe.id },
         // });
-
         // axios.delete("http://localhost:3000/favorite-recipes/", {
         //   params: { id: recipe.id },
         // });
@@ -115,7 +119,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         //   .catch((error) => {
         //     console.error("Error removing favorite recipe:", error);
         //   });
-
         // const deleteResponse = await fetch(
         //   `http://localhost:3000/favorite-recipes/${recipe.id}`,
         //   {

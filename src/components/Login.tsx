@@ -23,7 +23,7 @@ export default function Login() {
       );
 
       if (user) {
-        authContext?.login(user);
+        authContext?.login(user.id);
         navigate("/recipe");
       } else {
         alert("Invalid email or password");

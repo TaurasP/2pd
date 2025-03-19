@@ -48,7 +48,10 @@ const RecipeList: React.FC = () => {
 
         recipesData.forEach((recipe: any) => {
           recipe.isFavorite = favoriteRecipes.some(
-            (favRecipe: any) => Number(favRecipe.id) === recipe.id
+            (favRecipe: any) =>
+              Number(favRecipe.id) === recipe.id &&
+              favRecipe.userId ===
+                JSON.parse(localStorage.getItem("user") || "null")
           );
         });
         setRecipes(recipesData);
