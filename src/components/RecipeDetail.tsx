@@ -41,8 +41,6 @@ const RecipeDetail = () => {
   };
 
   useEffect(() => {
-    // Fetch the recipe details using the ID
-    // Replace the URL with your actual API endpoint
     fetch(`https://dummyjson.com/recipes/${id}`)
       .then((response) => response.json())
       .then((data) => setRecipe(data));

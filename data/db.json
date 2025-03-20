@@ -13,6 +13,48 @@
   ],
   "favorite-recipes": [
     {
+      "id": "8",
+      "name": "Beef and Broccoli Stir-Fry",
+      "ingredients": [
+        "Beef sirloin, thinly sliced",
+        "Broccoli florets",
+        "Soy sauce",
+        "Oyster sauce",
+        "Sesame oil",
+        "Garlic, minced",
+        "Ginger, minced",
+        "Cornstarch",
+        "Cooked white rice for serving"
+      ],
+      "instructions": [
+        "In a bowl, mix soy sauce, oyster sauce, sesame oil, and cornstarch to create the sauce.",
+        "In a wok, stir-fry thinly sliced beef until browned. Remove from the wok.",
+        "Stir-fry broccoli florets, minced garlic, and minced ginger in the same wok.",
+        "Add the cooked beef back to the wok and pour the sauce over the mixture.",
+        "Stir until everything is coated and heated through.",
+        "Serve over cooked white rice."
+      ],
+      "prepTimeMinutes": 20,
+      "cookTimeMinutes": 15,
+      "servings": 4,
+      "difficulty": "Medium",
+      "cuisine": "Asian",
+      "caloriesPerServing": 380,
+      "tags": [
+        "Beef",
+        "Stir-fry",
+        "Asian"
+      ],
+      "userId": "2",
+      "image": "https://cdn.dummyjson.com/recipe-images/8.webp",
+      "rating": 4.7,
+      "reviewCount": 58,
+      "mealType": [
+        "Dinner"
+      ],
+      "isFavorite": true
+    },
+    {
       "id": 13,
       "name": "Aloo Keema",
       "ingredients": [
@@ -56,48 +98,6 @@
       "reviewCount": 53,
       "mealType": [
         "Lunch",
-        "Dinner"
-      ],
-      "isFavorite": true
-    },
-    {
-      "id": 8,
-      "name": "Beef and Broccoli Stir-Fry",
-      "ingredients": [
-        "Beef sirloin, thinly sliced",
-        "Broccoli florets",
-        "Soy sauce",
-        "Oyster sauce",
-        "Sesame oil",
-        "Garlic, minced",
-        "Ginger, minced",
-        "Cornstarch",
-        "Cooked white rice for serving"
-      ],
-      "instructions": [
-        "In a bowl, mix soy sauce, oyster sauce, sesame oil, and cornstarch to create the sauce.",
-        "In a wok, stir-fry thinly sliced beef until browned. Remove from the wok.",
-        "Stir-fry broccoli florets, minced garlic, and minced ginger in the same wok.",
-        "Add the cooked beef back to the wok and pour the sauce over the mixture.",
-        "Stir until everything is coated and heated through.",
-        "Serve over cooked white rice."
-      ],
-      "prepTimeMinutes": 20,
-      "cookTimeMinutes": 15,
-      "servings": 4,
-      "difficulty": "Medium",
-      "cuisine": "Asian",
-      "caloriesPerServing": 380,
-      "tags": [
-        "Beef",
-        "Stir-fry",
-        "Asian"
-      ],
-      "userId": "2",
-      "image": "https://cdn.dummyjson.com/recipe-images/8.webp",
-      "rating": 4.7,
-      "reviewCount": 58,
-      "mealType": [
         "Dinner"
       ],
       "isFavorite": true

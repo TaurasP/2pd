@@ -60,20 +60,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
 
   const handleFavoriteRecipe = async () => {
     try {
-      // const favoriteRecipesResponse = await fetch(
-      //   "http://localhost:3000/favorite-recipes"
-      // );
-      // const favoriteRecipes = await favoriteRecipesResponse.json();
-      // const favoriteRecipesResponse = await axios.get(
-      //   "http://localhost:3000/favorite-recipes"
-      // );
-      // const favoriteRecipes = favoriteRecipesResponse.data;
-
-      // console.log(recipe.isFavorite);
-      // const recipeInFavorites = favoriteRecipes.some(
-      //   (favRecipe: any) => favRecipe.id === recipe.id
-      // );
-
       if (!recipe.isFavorite) {
         recipe.isFavorite = true;
         const userId = localStorage.getItem("user");
@@ -82,7 +68,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         } else {
           console.log("No user ID found in localStorage.");
         }
-        // await axios.post("http://localhost:3000/favorite-recipes", recipe);
         const response = await fetch("http://localhost:3000/favorite-recipes", {
           method: "POST",
           headers: {
@@ -97,39 +82,9 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         }
       } else {
         recipe.isFavorite = false;
-        // await axios.delete("http://127.0.0.1:3000/favorite-recipes/", {
-        //   params: { id: recipe.id },
-        // });
-        // axios.delete("http://localhost:3000/favorite-recipes/", {
-        //   params: { id: recipe.id },
-        // });
-
         await axios.delete(
           `http://localhost:3000/favorite-recipes/${recipe.id}`
         );
-
-        // axios
-        //   .delete("http://localhost:3000/favorite-recipes/" + recipe.id)
-        //   .then((response) => {
-        //     console.log(
-        //       "Recipe was removed from favorites successfully:",
-        //       response.data
-        //     );
-        //   })
-        //   .catch((error) => {
-        //     console.error("Error removing favorite recipe:", error);
-        //   });
-        // const deleteResponse = await fetch(
-        //   `http://localhost:3000/favorite-recipes/${recipe.id}`,
-        //   {
-        //     method: "DELETE",
-        //   }
-        // );
-        // if (deleteResponse.ok) {
-        //   alert("Recipe was removed from favorites successfully!");
-        // } else {
-        //   alert("Recipe was not removed from favorites.");
-        // }
       }
     } catch (error) {
       console.error("Error:", error);
